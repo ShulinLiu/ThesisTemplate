@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%
+
+%There are some problem in fonts, cant solve it yet
+
+%%%%%%%%%%%%%%%
+
+%!TEXprogram=xelatex
+%!Mode::"TeX:UTF-8"
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=25.4mm,bottom=25.4mm]{geometry}%设置页边距
+\usepackage[no-math]{fontspec}%提供字体选择命令
+\usepackage{xunicode}%提供Unicode字符宏
+\usepackage{xltxtra}%提供了针对XeTeX的改进并且加入了XeTeX的LOGO
+\usepackage[slantfont,boldfont]{xeCJK}%使用xeCJK宏包
+\usepackage{amsmath}%数学宏包
+\usepackage{mathspec}%数学字体宏包
+\usepackage{graphics} %图形宏包
+\usepackage{titleps} %设置页眉,页脚
+%\usepackage{xecolour}
+%%-----------------------设置中文字体--------
+%\setCJKmainfont]{Adobe Song Std}%设置正文为宋体
+%\setCJKmonofont{Adobe Heiti Std}%设置等距字体
+%\setCJKsansfont{Adobe Kaiti Std}%设置无衬线字体
+
+\setCJKmainfont]{Songti}
+\setCJKmonofont{Heiti}
+\setCJKsansfont{Kaiti}
+
+%%-----------------------设置英文字体------------------------
+\setmainfont[Mapping=tex-text]{TeX Gyre Pagella} %英文衬线字体
+\setsansfont[Mapping=tex-text]{Trebuchet MS} %英文无衬线字体
+\setmonofont[Mapping=tex-text]{Courier New} %英文等宽字体
+%%-----------------------设置数学字体--------------------------
+\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{MinionPro}
+%%-------------------------------------------------------------
+\punctstyle{kaiming}%开明式标点格式
+\usepackage{indentfirst}%首段缩进
+\linespread{1.5}%1.5倍行距
+\begin{document}
+\newpagestyle{yang}{
+\sethead{NorthWestUniversity}{}{某某大学}
+\setfoot{数学系}{}{第~~\thepage~~页}\headrule\footrule}\pagestyle{yang}
+这儿是正文
+\end{document}
+
+%\documentclass[12pt,a4paper]{article}  
+%\usepackage{fontspec, xunicode, xltxtra}  
+%\setmainfont{Heiti SC}  
+%\begin{document}  
+%Hello,World！  
+%这是一个测试的中文文档！  
+%\end{document} 
