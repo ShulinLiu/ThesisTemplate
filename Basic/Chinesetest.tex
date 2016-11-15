@@ -1,36 +1,106 @@
-%!TEX encoding = UTF-8 Unicode  
+%%%%%%%%%%%%%%%%%%%%%
+% 2016.11.15
+% 推荐查看使用#4和#5，直接使用xelatex
+% 测试版本最为稳定可行
+
+%%%%%%%%%%%%%%%%%%%%%
+
+%#1
+%!TEX encoding = UTF-8 Unicode 
+%第一页是空白，第二页才显示，有疑问 
+%必须要加“ \maketitle   ”这一行才会显示标题作者
+
 %\documentclass{article}  
 %\usepackage{CJKutf8}  
 %  
 %\begin{document}  
 %  
-%\begin{CJK}{UTF8}{bsmi}  
-%工作日记\newline  
-%独特想法  
+%\begin{CJK}{UTF8}{gkai}  
+%\title{工作日记}
+%\author{ShirleyL}
+%%\date{2016.11.15}
+%\date{\today}     %显示当前时间
+%\maketitle    
+%第一天工作，很累，不知所措。
+%\newline  独特想法  
 %\end{CJK}  
 %  
 %\end{document}  
 
+
+%#2
+%\documentclass[12pt]{article}
+%
+%\usepackage{xeCJK}
+%\setCJKmainfont[BoldFont=STZhongsong, ItalicFont=STKaiti]{STSong}
+%\setCJKsansfont[BoldFont=STHeiti]{STXihei}
+%\setCJKmonofont{STFangsong}
+%
+%
+%\begin{document}
+%\maketitle
+%这个段落中，夹杂着一个。
+%\end{document}
+
+
+%#3
+%\documentclass[UTF8]{ctexart}
+%\begin{document}
+%中文
+%\end{document}
+
+
+
+%#4
+%!TEX program = xelatex
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[12pt]{article}
-\usepackage{geometry}
-\geometry{letterpaper}
+\documentclass[12pt]{article} %这个我就不多说了，头文件
+\usepackage{url} %这个我也不多说了
+\usepackage{fontspec,xltxtra,xunicode} %最新的mactex都有
 
-\usepackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont{STSong} %设置中文字体
+\setromanfont{Heiti SC} %设置中文字体
 \XeTeXlinebreaklocale “zh”
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
 
-\newfontfamily{\H}{STHeiti}
-\newfontfamily{\E}{Arial}
-\title{\H 算法设计}
-\author{Donald}
-\date{\E\today}
-
+\newfontfamily{\H}{Songti SC} %设定新的字体快捷命令
+\newfontfamily{\E}{Weibei SC} %设定新的字体快捷命令
+\newfontfamily{\A}{Arial}
 \begin{document}
-\maketitle
-这个段落中，夹杂着一个{\E word}。
+\thispagestyle{empty}
+\small{给一个比较简单的方法，在mac上折腾CJK有点麻烦，其实XeTeX就可以解决中文的问题。编码的改动其实不需要在mactex的设置里面改，写在前面然后注释掉就好了。\\
+繁體字什麼的也是可以實現的。\\
+我只是尝试一下可不可以打英文：Hello ,my name is Shirley.\\
+换字体尝试英文：{\A Hello ,my name is Shirley.}\\
+当你需要打不同字体的时候，就需要用到这个\url{\newfontfamily}，这样你可以在一行中显示多种字体。比如说：\\
+}
+\Huge{{\H 宋体} {\E 魏碑} 黑体}
 \end{document}
+
+%#5
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%\documentclass[12pt]{article}
+%\usepackage{geometry}
+%\geometry{letterpaper}
+%
+%\usepackage{fontspec,xltxtra,xunicode}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont{STSong} %设置中文字体
+%\XeTeXlinebreaklocale “zh”
+%\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行
+%
+%\newfontfamily{\H}{STHeiti} %命名一个新字体
+%\newfontfamily{\E}{Arial}
+%\title{\H 算法设计}
+%\author{ShirleyL}
+%\date{\E\today}     %显示当前时间
+%
+%\begin{document}
+%\maketitle
+%这个段落中，夹杂着一个{\E word}。还有一个{\H 黑体}。%新字体使用只需{\E Word}即可
+%\end{document}
+
