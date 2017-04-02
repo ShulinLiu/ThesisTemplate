@@ -1,0 +1,98 @@
+空间：
+$\mathbb{R}^{2}$
+$\mathrm{H}^{m}(\Omega，\mathbb{S})$
+$\mathcal{C}_{0}$
+对所有：
+$\forall (\tau,v)\in\mathrm{M}_{h}\times\mathrm{V}_{h}$
+空间包含关系：
+$\mathrm{M}_{h}\subset\mathrm{M}，\mathrm{V}_{h}\subset\mathrm{V}$
+子空间：
+ \mathrm{V}^{+} = \left\{ v \in \left(\mathrm{L}^{2}(\Omega)\right)^{2}|\varepsilon(v)\in\mathrm{L}^{2}(\Omega,\mathbb{S})\right\}
+
+范数：
+$\|.\|_{m}$
+$a(\cdot,\cdot)$
+
+算子：
+$A = A (x,y): \mathbb{S}\rightarrow\mathbb{S}$
+$\forall\sigma\in\mathrm{H}^{1}(\Omega,\mathbb{S}) \rightarrow \mathrm{M}_{h}$
+算子性质：
+\|\mathrm{P}_{h}\sigma\|_{1} \leq C \|\sigma\|_{1}
+\|\sigma - \mathrm{P}_{h}\sigma\|_{1} \leq Ch \|\sigma\|_{1}
+
+inf-sup条件：
+ \begin{equation}
+\sup_{\tau\in\mathrm{M}}\frac{\int_{\Omega}v\cdot div\tau}{\|\tau\|_{\mathrm{H}(div)}}\geq\beta\|v\|_{0},\forall v\in\mathrm{V}
+\end{equation}
+
+\sup_{\tau\in\mathrm{H}^{1}(\Omega，\mathbb{S})}\frac{\int_{\Omega}v\cdot div\tau}{\|\tau\|_{1}}\geq\beta_{1}\|v\|_{0},\forall v\in\left(\mathrm{L}^{2}(\Omega)\right)^{2}
+
+离散问题：
+\mathcal{B}\left((\sigma_{h},u_{h}),(\tau_{h},v_{h})\right) = \mathrm{F}(v_{h})
+
+加标签公式：
+ \begin{equation}
+\|\tau\|_{h} =h \|\tau\|_{0} \text{ and } (\sigma,\tau)_{h} = h^{2}(\sigma,\tau)
+\end{equation}
+不加标签公式：
+ \begin{equation}\nonumber
+ \mathrm{V}^{+} = \left\{ v \in \left(\mathrm{L}^{2}(\Omega)\right)^{2}|\varepsilon(v)\in\mathrm{L}^{2}(\Omega,\mathbb{S})\right\}
+\end{equation}
+连等公式：
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+\sup_{\tau\in\mathrm{H}^{1}(\Omega，\mathbb{S})}\frac{\int_{\Omega}v\cdot div\tau}{\|\tau\|_{1}} &\geq& \frac{\int_{\Omega}v\cdot div\tau_{0}}{\|\tau_{0}\|_{1}} \\
+   &\geq&  \frac{\left(\|v\|_0\right)^2}{\|v\|_0} = \beta_{1}\|v\|_{0}
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+&\leq& c_1\|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + c_2\|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + c_3\|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)}\\
+   & +& c_4\|div\sigma\|_0\|div\tau\|_0 + c_5\gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h
+\end{eqnarray*}
+\begin{eqnarray*}
+&\leq& c_1\|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + c_2\|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + c_3\|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)} \\
+   & +& c_4\|\sigma\|_{\mathrm{H}(div)}\|\tau\|_{\mathrm{H}(div)} + c_5\gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h
+\end{eqnarray*}
+\begin{eqnarray*}
+&\leq& c_{\gamma} \Big( \|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + \|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + \|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)}\\
+   & +& \|\sigma\|_{\mathrm{H}(div)}\|\tau\|_{\mathrm{H}(div)} + \gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h \Big)
+\end{eqnarray*}
+\begin{eqnarray*}
+\leq c_{\gamma} \Big(\|\sigma_h\|_{\mathrm{H}(div)}^2 + \|u_h\|_0^2 + \|\mathrm{G}_h(u_h)\|_h^2 \Big) \Big(\|\tau_h\|_{\mathrm{H}(div)}^2 + \|v_h\|_0^2 + \|\mathrm{G}_h(v_h)\|_h^2 \Big)
+\end{eqnarray*}
+
+\begin{equation}\nonumber
+\mathcal{B}_h\left((\sigma_{h},u_{h}),(\tau_{h},v_{h})\right)\\
+  =\Big|\|\mathcal{B}\left((\sigma_{h},u_{h}),(\tau_{h},v_{h})\right) + \int_{\Omega}div\sigma_h div\tau_h + \gamma\left(\mathrm{G}_h(u_h),\mathrm{G}_h(v_h)\right)_h\|\Big|
+\end{equation}
+\begin{eqnarray*}
+  &\leq& c_1\|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + c_2\|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + c_3\|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)}\\
+   & +& c_4\|div\sigma\|_0\|div\tau\|_0 + c_5\gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h \\
+  &\leq& c_1\|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + c_2\|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + c_3\|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)} \\
+   & +& c_4\|\sigma\|_{\mathrm{H}(div)}\|\tau\|_{\mathrm{H}(div)} + c_5\gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h \\
+  &\leq& c_{\gamma} \Big( \|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + \|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + \|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)}\\
+   & +& \|\sigma\|_{\mathrm{H}(div)}\|\tau\|_{\mathrm{H}(div)} + \gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h \Big) \\
+  &\leq& c_{\gamma} \Big(\|\sigma_h\|_{\mathrm{H}(div)}^2 + \|u_h\|_0^2 + \|\mathrm{G}_h(u_h)\|_h^2 \Big) \Big(\|\tau_h\|_{\mathrm{H}(div)}^2 + \|v_h\|_0^2 + \|\mathrm{G}_h(v_h)\|_h^2 \Big)
+\end{eqnarray*}
+
+
+\begin{align*}
+\mathcal{B}_h\left((\sigma_{h},u_{h}),(\tau_{h},v_{h})\right)&=\Big|\|\mathcal{B}\left((\sigma_{h},u_{h}),(\tau_{h},v_{h})\right) + \int_{\Omega}div\sigma_h div\tau_h + \gamma\left(\mathrm{G}_h(u_h),\mathrm{G}_h(v_h)\right)_h\|\Big| \\
+&\leq c_1\|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + c_2\|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + c_3\|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)}\\
+   &  + c_4\|div\sigma\|_0\|div\tau\|_0 + c_5\gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h \\
+&\leq c_1\|\sigma_h\|_{\mathrm{H}(div)}\|\tau_h\|_{\mathrm{H}(div)} + c_2\|u_h\|_0\|\tau_h\|_{\mathrm{H}(div)} + c_3\|v_h\|_0\|\sigma_h\|_{\mathrm{H}(div)} \\
+   &  + c_4\|\sigma\|_{\mathrm{H}(div)}\|\tau\|_{\mathrm{H}(div)} + c_5\gamma \|\mathrm{G}_h(u_h)\|_h\|\mathrm{G}_h(v_h)\|_h \\
+\end{align*}
+
+注：
+\begin{rem}
+{\upshape\kaishu ~~又称式(\ref{lemma2})为弱$inf-sup$条件。这一引理是启发我们增添稳定项的关键。并且，它将在稳定性的证明中发挥重要的作用。
+}\label{rem1}
+\end{rem}
+
+%left duiqi
+\begin{flalign*}
+\geq -m_2\|\sigma_h\|_{\mathrm{H}(div)}\cdot \|u_h\|_0 + \left(C_{1}\|u_{h}\|_{0}^2 - C_{2}\|\mathrm{G}_{h}(u_{h})\|_{h}\cdot \|u_h\|_0\right) - \|\sigma_h\|_{\mathrm{H}(div)}\cdot \|u_h\|_0 &&\\
+\geq -\frac{(m_2+1)l_1}{2}\|\sigma_h\|_{\mathrm{H}(div)}^2 + \left(C_{1} -\frac{(m_2+1)}{2l_1}-\frac{C_2l_2}{2} \right)\|u_{h}\|_{0}^2 - \frac{1}{2l_2}\|\mathrm{G}_{h}(u_{h})\|_{h}^2 &&
+\end{flalign*}
