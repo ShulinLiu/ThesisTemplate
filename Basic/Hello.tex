@@ -1,3 +1,84 @@
+% Document Structure
+%% declare  %% preamble  %% airticle
+
+%article、report、book
+\documentclass[a4paper,12pt,draft]{report} %文档类声明 
+%\usepackage[options]{package} %引入宏包 ...
+
+\usepackage{fontspec,xltxtra,xunicode} %最新的mactex都有
+
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Heiti SC} %设置中文字体
+\XeTeXlinebreaklocale “zh”
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+\newfontfamily{\H}{Songti SC} %设定新的字体快捷命令
+\newfontfamily{\E}{Arial}%设定新的字体快捷命令
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} %正文
+\title{My Dilary} 
+\author{Shirley} 
+\date{\today} 
+\maketitle
+
+ \begin{abstract}abstract\end{abstract}
+ 
+ \tableofcontents   %menus
+ \chapter{Introduction}% airticle 中没有chapter层次结构
+ 
+ \section{常用命令环境}
+ \section{列表}
+ %\subsection{}
+ %\subsubsection{}
+hello \\
+my names is 
+
+%列表
+\begin{itemize}
+	\item C++
+	\item Java
+	\item HTML
+\end{itemize}
+
+\begin{enumerate}
+	\item C++
+	\item Java
+	\item HTML
+\end{enumerate}
+
+\begin{description} 
+	\item{C++} 一种编程语言 
+	\item{Java} 另一种编程语言 
+	\item{HTML} 一种标记语言\end{description}
+
+ \section{对齐}
+ \begin{flushleft} 
+ 本段落\\居左 
+ \end{flushleft}
+ 
+  \begin{flushright} 
+  本段落\\居右 
+  \end{flushright}
+ 
+ \begin{center} 
+ 本段落\\居中 
+ \end{center}
+ 
+\section{摘录}
+正文\begin{quote}引文两端都缩进。\end{quote}正文
+
+正文\begin{quotation}引文两端缩进,首行缩进。\end{quotation}正文
+
+正文\begin{verse}引文两端缩进,第二行起缩进。\end{verse}正文
+
+\end{document}
+
+
+
+
+
+
 %hello_world.tex
 
 %Example #1
