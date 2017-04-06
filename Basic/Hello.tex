@@ -1,11 +1,18 @@
 % Document Structure
 %% declare  %% preamble  %% airticle
 
+%%%%%%%%文档类声明 %%%%%%%%%%%%%%
 %article、report、book
-\documentclass[a4paper,12pt,draft]{report} %文档类声明 
+\documentclass[a4paper,12pt,draft]{report} 
+
+%%%%%%%%%%%宏包%%%%%%%%%%%%%%%%
 %\usepackage[options]{package} %引入宏包 ...
 
 \usepackage{fontspec,xltxtra,xunicode} %最新的mactex都有
+\usepackage[normalem]{ulem}%字体样式，下划线宏包
+\usepackage{marginnote} %边注宏包
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \defaultfontfeatures{Mapping=tex-text}
 \setromanfont{Heiti SC} %设置中文字体
@@ -15,62 +22,100 @@
 \newfontfamily{\H}{Songti SC} %设定新的字体快捷命令
 \newfontfamily{\E}{Arial}%设定新的字体快捷命令
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{document} %正文
-\title{My Dilary} 
+\renewcommand{\thefootnote}{\roman{footnote}} %i, ii, iii
+
+
+%%%%%%%%%%%%%正文%%%%%%%%%%%%%%%
+\begin{document} 
+\title{LaTeX Notes} 
 \author{Shirley} 
 \date{\today} 
 \maketitle
 
- \begin{abstract}abstract\end{abstract}
+ \begin{abstract}% book 中没有abstract层次结构
+abstract
+\end{abstract}
  
- \tableofcontents   %menus
- \chapter{Introduction}% airticle 中没有chapter层次结构
+  \setcounter{tocdepth}{2} % 设 定 目 录 深 度 
+   \tableofcontents   % 列 出 目 录
+
+ \chapter{入门}% airticle 中没有chapter层次结构
  
  \section{常用命令环境}
- \section{列表}
+  \subsection{字体和下划线}
+ \emph{emphasis}\\ 
+ \uline{underline}\\ 
+ \uwave{waveline}\\ 
+ \sout{strike-out}
+ 
+ \subsection{列表}
  %\subsection{}
  %\subsubsection{}
-hello \\
-my names is 
 
 %列表
+无序列表：
 \begin{itemize}
 	\item C++
 	\item Java
 	\item HTML
 \end{itemize}
 
+有序列表：
 \begin{enumerate}
 	\item C++
 	\item Java
 	\item HTML
 \end{enumerate}
 
+描述列表：
 \begin{description} 
 	\item{C++} 一种编程语言 
 	\item{Java} 另一种编程语言 
-	\item{HTML} 一种标记语言\end{description}
+	\item{HTML} 一种标记语言
+\end{description}
 
- \section{对齐}
+ \subsection{对齐}
  \begin{flushleft} 
- 本段落\\居左 
+ 本段落\\
+ 居左 
  \end{flushleft}
  
   \begin{flushright} 
-  本段落\\居右 
+  本段落\\
+  居右 
   \end{flushright}
  
  \begin{center} 
- 本段落\\居中 
+ 本段落\\
+ 居中 
  \end{center}
  
-\section{摘录}
-正文\begin{quote}引文两端都缩进。\end{quote}正文
+\subsection{摘录}
+正文
+\begin{quote}
+引文两端都缩进。
+\end{quote}
+正文
 
-正文\begin{quotation}引文两端缩进,首行缩进。\end{quotation}正文
+正文
+\begin{quotation}
+引文两端缩进,首行缩进。
+\end{quotation}
+正文
 
-正文\begin{verse}引文两端缩进,第二行起缩进。\end{verse}正文
+正文
+\begin{verse}
+引文两端缩进,第二行起缩进。
+\end{verse}
+正文
+
+\subsection{脚注}
+%重定义脚注，在document之前
+%\renewcommand{\thefootnote}{\roman{footnote}} %i, ii, iii
+正文\footnote{脚注}
+
+\subsection{边注}
+\marginnote{正常边注} \reversemarginpar\marginnote{反向边注} \normalmarginpar
 
 \end{document}
 
