@@ -1,0 +1,21 @@
+\documentclass{beamer}  
+\usetheme{CambridgeUS}  
+   
+\usepackage{fontspec}  
+\setsansfont{STSong} % font name is case-sensitive  
+   
+\begin{document}  
+\title{xelatex+beamer处理中文}   
+\frame{\titlepage}  
+\begin{frame} {你好，世界!}  
+A displayed formula:  
+\[  
+  \int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}  
+\]  
+\begin{itemize}  
+\item 成功编译tex文件  
+\item 需要处理中英文混排时候的字体问题    
+\item 还需要处理公式中的字体问题  
+\end{itemize}  
+\end{frame}  
+\end{document}  
