@@ -1,0 +1,201 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass{beamer}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+%\usetheme{Warsaw}
+\usetheme{AnnArbor}
+%\usetheme{PaloAlto}
+%\usetheme{Antibes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Marburg}
+%\usetheme{PaloAlto}
+%\usetheme{Singapore}
+%\usetheme{Warsaw}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setromanfont[Mapping=tex-text]{STKaiti} %设置中文字体
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{STKaiti} 
+\setmonofont[Scale=MatchLowercase]{STKaiti} 
+
+%\setromanfont[Mapping=tex-text]{Hoefler Text}
+%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+%\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+
+\newfontfamily{\H}{STHeiti}
+\newfontfamily{\K}{STKaiti}
+\newfontfamily{\E}{Arial}
+ \newfontfamily{\S}{STSong}
+ 
+
+
+\title{PPT Template}
+\author{Shirley Liu}
+\date{\today}                                           % Activate to display a given date or no date
+
+\begin{document}
+
+%%%title frame
+%\begin{frame}
+%	\titlepage
+%\end{frame}
+
+\AtBeginSection[]{
+\begin{frame}{Table of Contents}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\begin{frame}
+	\thispagestyle{empty}
+	\titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\begin{frame}{Table of Contents}
+	\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section One}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SubSection One}
+
+\begin{frame}{What Is Beamer?}
+	\begin{itemize}
+		\item Beamer is a flexible \LaTeX\ class for making slides and presentations.
+		\item It supports functionality for making PDF slides complete with colors, overlays, environments, themes, transitions, etc.
+		\item Adds a couple new features to the commands you've been working with.
+		\pause
+		\item As you probably guessed, this presentation was made using the Beamer class.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[Basic Structure]{SubSection Two}
+
+\begin{frame}[fragile]{Document Template: slides.tex}
+\begin{columns}[t]
+  \column{0.5\textwidth}
+  \begin{block}{}
+    \begin{verbatim}
+\documentclass[pdf]
+          {beamer}
+\mode<presentation>{}
+%% preamble
+\title{The title}
+\subtitle{The subtitle}
+\author{your name}
+
+\begin{document}
+  	\end{verbatim}	
+  \end{block}
+  
+	\column{0.5\textwidth}
+	\begin{block}{}
+		\begin{semiverbatim}
+\%\% title frame
+\\begin\{frame\}
+    \\titlepage
+\\end\{frame\}
+
+\%\% normal frame
+\\begin\{frame\}\{Frame title\}
+    The body of the frame.
+\\end\{frame\}
+
+\\end\{document\}
+		\end{semiverbatim}
+	\end{block}
+\end{columns}
+\verb+athena% make slides.pdf+
+\end{frame}
+
+\begin{frame}[fragile]{What would you like in your sandwich?}
+\begin{itemize}
+	\item So what can you do between \verb=\begin{frame}= and \verb=\end{frame}=?
+	\pause
+	\item Pretty much anything you can do in a normal \LaTeX\
+	document:
+	\pause
+	\begin{itemize}
+		\item figures, tables, equations, normal text, etc.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Too much \LaTeX\ for your frames to handle?}
+	\begin{itemize}
+		\item Be careful not to fit too much text, especially when writing mathematical formulas, but if you must...
+		\pause
+		\item Use the optional argument \verb=[allowframebreaks]= with \verb=\begin{frame}= to let \LaTeX\ automatically segment your very long frame.
+		\pause
+		\item Warning: Overlays are not available with \verb=[allowframebreaks]=.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Don't Do This}
+\begin{itemize}
+	\item Here is a well-known formula:\vspace{-.5em}
+	$$\displaystyle \sum_{k=0}^{n} k = \frac{n(n+1)}{2}$$
+	\item Here is a less well-known, but still useful, formula:\vspace{-.5em}
+	$$\displaystyle \sum_{k=0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$$
+	\item This is pretty well-known, too:\vspace{-.5em}
+	$$\displaystyle \sum_{k=0}^{n} k^3 = \left(\frac{n(n+1)}{2}\right)^2$$
+	\item Who knows about this one?\vspace{-.5em}
+	$$\displaystyle \sum_{k=0}^{n} k^4 = \frac{n(6n^4 + 15n^3 + 10n^2 + 1)}{30}$$
+	\item Have fun factoring the quartic expression!
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section Two}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SubSection One}
+
+\begin{frame}
+\frametitle{Page One}
+Here are some multilingual Unicode fonts: 楷体
+\begin{itemize}
+ \item this is Hebrew: {\H 黑体}, 
+   \item and here's some Japanese
+   \item here's Chinese: {\S 宋体}
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}  
