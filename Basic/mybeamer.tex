@@ -1,0 +1,130 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[xcolor=svgnames,12pt,
+%handout
+]{beamer}
+
+%----
+\definecolor{color01}{rgb}{0.55,0.7,0.44}		% 主架構顏色
+\definecolor{color02}{rgb}{0.93,1,0.88}
+\definecolor{color04}{rgb}{0.44,0.5,0.38}		% 文字顏色
+
+%
+\usecolortheme[named=color01]{structure}
+\usetheme{Copenhagen}
+\useoutertheme{miniframes}
+
+\usepackage{amsmath, amssymb} % AMS 套件
+\usepackage{epsfig} %for figures
+\usepackage{booktabs} % 表格用
+
+
+\graphicspath{{images/}} % 設定圖形路徑
+
+
+%%%% 字型設定 -- 這裡改成自己的字型
+%==================================================
+\usepackage{xeCJK}
+%\setCJKmainfont[BoldFont={cwTeX Q Hei Bold}]{cwTeX Q Yuan Medium} % 設預設中文字型
+%\setCJKfamilyfont{kai}{cwTeX Q Kai Medium}			    % 楷書	      			
+%\setCJKfamilyfont{hei}{cwTeX Q Hei Bold}				% 黑體
+%\setCJKfamilyfont{ming}{cwTeX Q Ming Medium}			% 明體
+%\setCJKfamilyfont{yuan}{cwTeX Q Yuan Medium}			% 圓體
+%\setCJKfamilyfont{fsong}{cwTeX Q Fangsong Medium}		% 仿宋體
+%
+%\newcommand{\kai}[1]{{\CJKfamily{kai}#1}}   	% 用 \kai{使用楷書}
+%\newcommand{\hei}[1]{{\CJKfamily{hei}#1}}   	% 用 \hei{使用黑體}
+%\newcommand{\ming}[1]{{\CJKfamily{ming}#1}}		% 用 \ming{使用明體}
+%\newcommand{\yuan}[1]{{\CJKfamily{yuan}#1}}		% 用 \yuan{使用圓體}
+%\newcommand{\fsong}[1]{{\CJKfamily{fsong}#1}}	% 用 \fsong{使用仿宋體}
+
+\setCJKmainfont[BoldFont={STHeiti}]{STHeiti} % 設預設中文字型
+\setCJKfamilyfont{kai}{STKai}			    % 楷書	      			
+\setCJKfamilyfont{hei}{STHeiti}				% 黑體
+%\setCJKfamilyfont{ming}{cwTeX Q Ming Medium}			% 明體
+%\setCJKfamilyfont{yuan}{cwTeX Q Yuan Medium}			% 圓體
+%\setCJKfamilyfont{fsong}{cwTeX Q Fangsong Medium}		% 仿宋體
+%
+\newcommand{\kai}[1]{{\CJKfamily{kai}#1}}   	% 用 \kai{使用楷書}
+\newcommand{\hei}[1]{{\CJKfamily{hei}#1}}   	% 用 \hei{使用黑體}
+%\newcommand{\ming}[1]{{\CJKfamily{ming}#1}}		% 用 \ming{使用明體}
+%\newcommand{\yuan}[1]{{\CJKfamily{yuan}#1}}		% 用 \yuan{使用圓體}
+%\newcommand{\fsong}[1]{{\CJKfamily{fsong}#1}}	% 用 \fsong{使用仿宋體}
+
+ 
+\usefonttheme{professionalfonts}
+\setromanfont[Mapping=tex-text,BoldFont={Gill Sans}]{Century Gothic}
+\setmonofont[Scale=MatchLowercase]{AmericanTypewriter} % 指定等寛字型
+%==================================================
+
+
+%%%% 排版設定
+\linespread{1.2}
+
+
+% Section 開始
+\AtBeginSection[] 
+{ 
+\begin{frame}
+\begin{center}
+\Huge\insertsection
+\end{center}
+\end{frame}
+}
+
+
+\setbeamercolor{normal text}{bg=color02}
+\setbeamercolor{normal text}{fg=color04} 
+
+\newcommand{\ALERT}[1]{\begin{frame}\begin{center}\Huge #1\end{center}\end{frame}} 
+
+\title[質數很有趣 \hspace{4em}\insertframenumber/
+\inserttotalframenumber]{~ \\ 質數很有趣\\
+-- 追尋大質數的故事 \\~}
+
+
+\author[蔡炎龍]{ \\ 蔡炎龍\\政治大學應用數學系} 
+
+\date{2014 年 5 月}
+
+
+%%%%%%%%
+%
+%    本文開始
+%
+%%%%%%%%
+
+\begin{document}
+
+%
+\begin{frame}
+\maketitle
+\end{frame}
+
+%
+\begin{frame}
+\tableofcontents 
+\end{frame}
+
+\section{簡介}
+%
+\begin{frame}
+\frametitle{質數}
+
+質數的定義。
+\end{frame}
+
+
+%
+\begin{frame}
+\frametitle{質數有無限多個}
+
+就是這樣。
+\end{frame}
+
+
+%
+\section{「最大」質數}
+
+
+\end{document}
